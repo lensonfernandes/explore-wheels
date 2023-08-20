@@ -2,7 +2,7 @@
 
 import { CarProps } from "@/types";
 import React, { useState } from "react";
-import { CustomButton } from ".";
+import { CarDetails, CustomButton } from ".";
 import { calculateCarRent } from "@/utils";
 import Image from "next/image";
 
@@ -52,6 +52,8 @@ const CarCard = ({ car }: CarCardProps) => {
         <div>
             <CustomButton title="View More" containerStyles="w-full py-[16x] bg-primary-blue text-white rounded-xl" handleClick={()=> setIsOpen(true)} />
         </div>
+
+        <CarDetails isOpen={isOpen} closeModal={()=>setIsOpen(false) } car={car} />
 
     </div>
   </div>;
